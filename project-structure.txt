@@ -1,0 +1,9 @@
+Struktur Proyek Seek-Customer:
+
+├── components
+│   ├── footer.php
+│   └── header.php
+├── contact.php
+├── get-structure.js
+├── index.php
+└── unit-usaha.php
