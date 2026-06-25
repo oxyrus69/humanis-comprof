@@ -103,7 +103,7 @@ include 'components/header.php';
 
         <!-- Tambahan Gambar Bagan Organisasi -->
         <div class="text-center mb-5">
-            <img src="public/struktur.png" alt="Bagan Struktur Organisasi Yayasan HUMANIS" class="img-fluid rounded shadow-sm border" style="max-width: 100%; height: auto;">
+            <img src="public/struktur.jpeg" alt="Bagan Struktur Organisasi Yayasan HUMANIS" class="img-fluid rounded shadow-sm border" style="max-width: 100%; height: auto;">
         </div>
 
         <div class="table-responsive">

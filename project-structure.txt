@@ -4,6 +4,11 @@ Struktur Proyek Seek-Customer:
 │   ├── footer.php
 │   └── header.php
 ├── contact.php
+├── divisi.php
 ├── get-structure.js
 ├── index.php
-└── unit-usaha.php
+├── karir.php
+├── kerjasama.php
+├── project-structure.txt
+├── proses-kontak.php
+└── tentang.php

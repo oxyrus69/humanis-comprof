@@ -46,8 +46,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-humanis sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold tracking-wide" href="index.php">
-                <i class="bi bi-boxes me-2"></i>HUMANIS
+            <a class="navbar-brand fw-bold tracking-wide d-flex align-items-center" href="index.php">
+                <img src="public/logo1.png" alt="Logo HUMANIS" height="40" class="me-2">
+                HUMANIS
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
