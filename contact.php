@@ -1,13 +1,22 @@
 <?php
 $pageTitle = "Kontak - HUMANIS";
 include 'components/header.php';
+include 'koneksi.php'; // Hubungkan ke database
+
+// MENGAMBIL DATA DARI DATABASE
+$query = "SELECT * FROM pengaturan_web";
+$result = mysqli_query($conn, $query);
+$data = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $data[$row['kunci']] = $row['nilai'];
+}
 ?>
 
 <!-- Bagian Header Halaman -->
 <div class="bg-humanis text-white py-5">
     <div class="container text-center mt-4">
-        <h1 class="fw-bold">Hubungi Kami</h1>
-        <p class="lead opacity-75">Kami siap menjawab pertanyaan dan menjalin kolaborasi dengan Anda.</p>
+        <h1 class="fw-bold"><?= htmlspecialchars($data['kontak_hero_judul'] ?? 'Hubungi Kami') ?></h1>
+        <p class="lead opacity-75"><?= htmlspecialchars($data['kontak_hero_desk'] ?? 'Kami siap menjawab pertanyaan dan menjalin kolaborasi dengan Anda.') ?></p>
     </div>
 </div>
 
@@ -34,7 +43,6 @@ include 'components/header.php';
 
             <div class="card border-0 shadow-sm bg-light">
                 <div class="card-body p-4">
-                    <!-- Perhatikan action formulirnya sekarang mengarah ke proses-kontak.php -->
                     <form action="proses-kontak.php" method="POST">
                         <div class="mb-3">
                             <label for="nama" class="form-label fw-semibold">Nama Lengkap</label>
@@ -78,8 +86,7 @@ include 'components/header.php';
                 <div>
                     <h5 class="fw-bold mb-1">Alamat Kantor Pusat</h5>
                     <p class="text-muted mb-0" style="line-height: 1.8;">
-                        Yayasan Center for Human Centered STEM Education Indonesia (HUMANIS)<br>
-                        Jl. Ngumbul Raya, Ngumbul, Tamanan, Banguntapan, Bantul, DI Yogyakarta
+                        <?= $data['kontak_alamat'] ?? 'Alamat Belum Diatur' ?>
                     </p>
                 </div>
             </div>
@@ -90,9 +97,9 @@ include 'components/header.php';
                 <div>
                     <h5 class="fw-bold mb-1">Kontak Utama</h5>
                     <ul class="list-unstyled text-muted mb-0" style="line-height: 1.8;">
-                        <li><strong>Email:</strong> humanisedu@gmail.com</li>
-                        <li><strong>WA Official:</strong> 087767801947</li>
-                        <li><strong>Website:</strong> www.humaniscenter.id</li>
+                        <li><strong>Email:</strong> <?= htmlspecialchars($data['kontak_email_utama'] ?? '') ?></li>
+                        <li><strong>WA Official:</strong> <?= htmlspecialchars($data['kontak_wa_utama'] ?? '') ?></li>
+                        <li><strong>Website:</strong> <?= htmlspecialchars($data['kontak_website'] ?? '') ?></li>
                     </ul>
                 </div>
             </div>
@@ -100,51 +107,14 @@ include 'components/header.php';
             <!-- Email Divisi -->
             <h5 class="fw-bold text-dark mt-5 mb-3">Email Per Divisi</h5>
             <div class="table-responsive">
-                <table class="table table-sm table-borderless table-hover text-muted">
-                    <tbody>
-                        <tr>
-                            <td style="width: 40%;"><i class="bi bi-envelope me-2"></i> Umum</td>
-                            <td><a href="mailto:info@humanis.id" class="text-decoration-none text-muted">info@humanis.id</a></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-envelope me-2"></i> Publikasi Ilmiah</td>
-                            <td><a href="mailto:jurnal@humanis.id" class="text-decoration-none text-muted">jurnal@humanis.id</a></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-envelope me-2"></i> HUMANIS Press</td>
-                            <td><a href="mailto:press@humanis.id" class="text-decoration-none text-muted">press@humanis.id</a></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-envelope me-2"></i> Pelatihan & Pengabdian</td>
-                            <td><a href="mailto:pelatihan@humanis.id" class="text-decoration-none text-muted">pelatihan@humanis.id</a></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-envelope me-2"></i> Learning Center</td>
-                            <td><a href="mailto:learning@humanis.id" class="text-decoration-none text-muted">learning@humanis.id</a></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-envelope me-2"></i> Riset</td>
-                            <td><a href="mailto:riset@humanis.id" class="text-decoration-none text-muted">riset@humanis.id</a></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-envelope me-2"></i> Kerja Sama</td>
-                            <td><a href="mailto:kerjasama@humanis.id" class="text-decoration-none text-muted">kerjasama@humanis.id</a></td>
-                        </tr>
-                        <tr>
-                            <td><i class="bi bi-envelope me-2"></i> Karir</td>
-                            <td><a href="mailto:karir@humanis.id" class="text-decoration-none text-muted">karir@humanis.id</a></td>
-                        </tr>
-                    </tbody>
-                </table>
+                <!-- Tampil dari Visual Editor Admin -->
+                <?= $data['kontak_email_divisi'] ?? '' ?>
             </div>
 
             <!-- Media Sosial -->
             <h5 class="fw-bold text-dark mt-4 mb-3">Media Sosial</h5>
-            <div class="d-flex flex-wrap gap-2">
-                <a href="#" class="btn btn-outline-secondary border-secondary rounded-pill"><i class="bi bi-instagram me-1"></i> @humanis.id</a>
-                <a href="#" class="btn btn-outline-secondary border-secondary rounded-pill"><i class="bi bi-youtube me-1"></i> HUMANIS Official</a>
-                <a href="#" class="btn btn-outline-secondary border-secondary rounded-pill"><i class="bi bi-linkedin me-1"></i> HUMANIS Indonesia</a>
-            </div>
+            <!-- Tampil dari Visual Editor Admin -->
+            <?= $data['kontak_sosmed'] ?? '' ?>
         </div>
     </div>
 </div>

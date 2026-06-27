@@ -1,8 +1,12 @@
-Struktur Proyek Seek-Customer:
+Struktur Proyek:
 
 ├── components
 │   ├── footer.php
 │   └── header.php
+├── PHPMailer
+│   ├── Exception.php
+│   ├── PHPMailer.php
+│   └── SMTP.php
 ├── contact.php
 ├── divisi.php
 ├── get-structure.js

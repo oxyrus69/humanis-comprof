@@ -1,15 +1,18 @@
 <?php
 $pageTitle = "Beranda - HUMANIS STEM Education";
+// Memanggil jembatan koneksi ke database
+include 'koneksi.php'; 
 include 'components/header.php';
 ?>
 
 <div class="hero-section text-center">
     <div class="container">
-        <!-- Tanda strip pada Human Centered telah dihapus sesuai permintaan -->
-        <h1 class="display-4 fw-bold mb-3">Center for Human Centered STEM Education</h1>
-        <p class="lead mb-4 opacity-75">Mengintegrasikan sains, teknologi, teknik, dan matematika dengan pendekatan yang memanusiakan manusia.</p>
+        <!-- Mengambil data judul hero dari database secara dinamis -->
+        <h1 class="display-4 fw-bold mb-3"><?= get_pengaturan('hero_judul', $conn) ?></h1>
+        
+        <!-- Mengambil data deskripsi hero dari database -->
+        <p class="lead mb-4 opacity-75"><?= get_pengaturan('hero_deskripsi', $conn) ?></p>
 
-        <!-- Tautan dan teks diubah dari Unit Usaha menjadi Divisi -->
         <a href="divisi.php" class="btn btn-light btn-lg rounded-pill text-humanis fw-bold px-5 shadow-sm">Jelajahi Divisi Kami</a>
     </div>
 </div>
@@ -20,8 +23,9 @@ include 'components/header.php';
             <h2 class="fw-bold text-humanis mb-3">Tentang HUMANIS</h2>
             <div class="mx-auto mb-4" style="width: 60px; height: 3px; background-color: #00796b;"></div>
 
+            <!-- Mengambil teks tentang dari database dan menggunakan nl2br untuk merapikan paragraf -->
             <p class="text-muted" style="line-height: 1.8; text-align: justify;">
-                <strong>Center for Human Centered STEM Education Indonesia (HUMANIS)</strong> hadir sebagai pusat inovasi dan pengembangan pendidikan. Kami percaya bahwa pendidikan STEM tidak hanya sebatas pada penguasaan kecanggihan teknologi atau rumus matematis, melainkan bagaimana disiplin ilmu tersebut dapat dikelola dan diterapkan untuk kesejahteraan masyarakat dan kemajuan peradaban manusia secara berkelanjutan.
+                <?= nl2br(get_pengaturan('home_about_teks', $conn)) ?>
             </p>
         </div>
     </div>

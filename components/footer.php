@@ -23,7 +23,7 @@
                         <i class="bi bi-geo-alt me-3 mt-1 text-humanis"></i>
                         <span>Yayasan Center for Human Centered STEM Education Indonesia (HUMANIS)<br>Kantor Pusat: Jl. Ngumbul Raya, Ngumbul, Tamanan, Banguntapan, Bantul, DI Yogyakarta</span>
                     </li>
-                    <li class="mb-2"><i class="bi bi-envelope me-3 text-humanis"></i> humanisedu@gmail.com / info@humanis.id</li>
+                    <li class="mb-2"><i class="bi bi-envelope me-3 text-humanis"></i> info@humaniscenter.id / humaniscenter.id@gmail.com</li>
                     <li class="mb-2"><i class="bi bi-whatsapp me-3 text-humanis"></i> 087767801947 (WA Official)</li>
                     <li class="mb-2"><i class="bi bi-globe me-3 text-humanis"></i> www.humaniscenter.id</li>
                 </ul>
