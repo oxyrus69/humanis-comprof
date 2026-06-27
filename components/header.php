@@ -54,10 +54,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="index.php">Beranda</a></li>
 
-                    <!-- Menu Tentang Kami -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="tentangDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Tentang Kami
@@ -69,7 +68,6 @@
                         </ul>
                     </li>
 
-                    <!-- Menu Divisi (Pengganti Unit Usaha) -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="divisiDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Divisi
@@ -83,7 +81,6 @@
                         </ul>
                     </li>
 
-                    <!-- Menu Kerja Sama -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="kerjasamaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Kerja Sama
@@ -95,7 +92,6 @@
                         </ul>
                     </li>
 
-                    <!-- Menu Karir -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="karirDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Karir
@@ -108,6 +104,14 @@
                     </li>
 
                     <li class="nav-item"><a class="nav-link" href="contact.php">Kontak</a></li>
+
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a href="admin/login.php" class="btn btn-outline-light btn-sm rounded-circle p-2 lh-1" title="Login Admin">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                            </svg>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
